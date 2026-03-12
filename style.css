@@ -285,7 +285,7 @@ code, pre, .eyebrow, .section-label, .metric-badge, .card-stack span, .timeline-
 .stat-number { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: var(--text-primary); line-height: 1; margin-bottom: 8px; }
 .stat-label { font-size: 0.9rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; }
 
-.parallax-card-wrap { position: relative; width: 100%; max-width: 450px; transform-style: preserve-3d; }
+.parallax-card-wrap { position: relative; width: 100%; max-width: min(100%, 450px); transform-style: preserve-3d; }
 .code-card {
     background: var(--bg-surface);
     border-radius: var(--radius-md);
@@ -492,13 +492,24 @@ code, pre, .eyebrow, .section-label, .metric-badge, .card-stack span, .timeline-
 .timeline-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; font-family: var(--font-code); font-size: 0.75rem; color: var(--text-muted); }
 .timeline-tags span { background: rgba(var(--accent-secondary-rgb), 0.1); padding: 4px 10px; border-radius: 4px; }
 
+/* ---------- ACHIEVEMENTS ---------- */
+.achievements-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
+.achieve-card {
+    background: var(--bg-surface); padding: 30px; border-radius: var(--radius-md);
+    border: 1px solid var(--border-color); text-align: center; transition: var(--transition-fast);
+}
+.achieve-card:hover { transform: translateY(-5px); border-color: var(--accent-secondary); box-shadow: var(--glow-secondary); }
+.achieve-icon { font-size: 3rem; margin-bottom: 16px; }
+.achieve-card h4 { margin-bottom: 8px; font-size: 1.1rem; }
+.achieve-sub { color: var(--text-secondary); font-size: 0.9rem; font-family: var(--font-code); }
+
 /* ---------- TESTIMONIALS ---------- */
 .carousel-wrapper { overflow: hidden; position: relative; padding: 20px 0; }
 .carousel-track { display: flex; gap: 30px; animation: scrollHoriz 30s linear infinite; width: max-content; }
 .carousel-track:hover { animation-play-state: paused; }
 .testimonial-card {
     background: var(--bg-surface); border: 1px solid var(--border-color);
-    padding: 40px; border-radius: var(--radius-md); width: 450px;
+    padding: 40px; border-radius: var(--radius-md); width: 450px; max-width: 85vw;
     display: flex; flex-direction: column;
 }
 .quote-mark { font-family: var(--font-heading); font-size: 4rem; color: var(--accent-primary); line-height: 0.5; margin-bottom: 20px; opacity: 0.5; }
@@ -575,6 +586,13 @@ code, pre, .eyebrow, .section-label, .metric-badge, .card-stack span, .timeline-
 }
 
 @media (max-width: 768px) {
+    .section { padding: 80px 0; }
+    .container { padding: 0 5vw; }
+    .hero-container { padding-top: 20px; }
+    .hero-title { font-size: 2.5rem; line-height: 1.2; }
+    .hero-stats { gap: 20px; }
+    .stat-number { font-size: 2rem; }
+    
     .nav-links {
         position: fixed; top: var(--nav-height); left: 0; width: 100%;
         background: var(--bg-surface); flex-direction: column; padding: 40px 0; gap: 20px;
@@ -591,7 +609,29 @@ code, pre, .eyebrow, .section-label, .metric-badge, .card-stack span, .timeline-
     .timeline-dot { left: 12px !important; }
     .timeline-inverted .timeline-dot { left: 12px !important; }
     
-    .hero-title { font-size: 2.5rem; }
+    .testimonial-card { padding: 30px; }
+    .skills-grid { gap: 40px; }
+    .fp-title { font-size: 2rem; }
+    .about-grid { gap: 40px; }
+}
+
+@media (max-width: 480px) {
+    .section { padding: 60px 0; }
+    .hero-title { font-size: 2rem; }
+    .hero-cta { flex-direction: column; width: 100%; gap: 15px; }
+    .hero-cta .btn { width: 100%; }
+    .contact-form { padding: 25px 20px; }
+    .hex-cloud { justify-content: center; }
+    .featured-project { padding: 25px 20px; }
+    .category-cards, .highlight-cards { grid-template-columns: 1fr; }
+    .footer-grid { justify-content: center; text-align: center; }
+    .footer-links, .footer-socials { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+    .footer-links a, .footer-socials a { margin: 0; }
+    .nav-container { padding: 0 20px; }
+    .container { padding: 0 20px; }
+    .container-full { padding: 0 20px; }
+    .hero-stats { padding-top: 30px; }
+    .stat-item { align-items: center; }
 }
 
 /* Custom Cursor Tracker */
