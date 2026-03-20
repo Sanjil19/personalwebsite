@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Senior Spring Boot Architect | Backend Engineer</title>
+    <title>Senior AI/ML Engineer | Deep Learning Specialist</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <!-- Devicon for Tech Stack -->
@@ -42,14 +42,14 @@
         <div class="hero-container container">
             <div class="hero-left anim-fade-up">
                 <div class="eyebrow"><span class="eyebrow-comment">// available for hire</span><span class="cursor-blink">_</span></div>
-                <h1 class="hero-title">Engineering the Backend That Powers the Future</h1>
+                <h1 class="hero-title">Engineering Intelligence That Powers the Future</h1>
                 <div class="hero-typewriter">
                     <span class="typewriter-prefix">&gt; </span>
                     <span id="typewriter-text" class="typewriter-text"></span>
                     <span class="typewriter-cursor">|</span>
                 </div>
                 <p class="hero-bio">
-                    I build high-performance, security-hardened backend systems that scale to millions. With deep expertise in the Spring ecosystem, I architect solutions that enterprises trust.
+                    I build robust, scalable artificial intelligence and machine learning pipelines. With deep expertise in deep learning, LLMs, and computer vision, I architect intelligent solutions that enterprises trust.
                 </p>
                 <div class="hero-cta">
                     <a href="#projects" class="btn btn-primary glow-btn"><span>View My Work &rarr;</span></a>
@@ -68,32 +68,30 @@
                     <div class="code-card">
                         <div class="code-header">
                             <span class="code-dot red"></span><span class="code-dot yellow"></span><span class="code-dot green"></span>
-                            <span class="code-filename">SecurityConfig.java</span>
+                            <span class="code-filename">inference.py</span>
                         </div>
                         <div class="code-content">
-<pre><code><span class="keyword">@Configuration</span>
-<span class="keyword">@EnableWebSecurity</span>
-<span class="keyword">public class</span> <span class="classname">SecurityConfig</span> {
-    <span class="keyword">@Bean</span>
-    <span class="keyword">public</span> SecurityFilterChain filter(HttpSecurity http) {
-        http.csrf(c -> c.disable())
-            .authorizeHttpRequests(r -> r
-                .requestMatchers(<span class="string">"/api/auth/**"</span>).permitAll()
-                .anyRequest().authenticated()
-            )
-            .sessionManagement(s -> s
-                .sessionCreationPolicy(STATELESS)
-            );
-        <span class="keyword">return</span> http.build();
-    }
-}</code></pre>
+<pre><code><span class="keyword">import</span> torch
+<span class="keyword">from</span> transformers <span class="keyword">import</span> AutoModelForCausalLM, AutoTokenizer
+
+<span class="keyword">class</span> <span class="classname">ModelInference</span>:
+    <span class="keyword">def</span> <span class="method">__init__</span>(self, model_name: <span class="classname">str</span>):
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+        self.model = AutoModelForCausalLM.from_pretrained(
+            model_name, torch_dtype=torch.float16, device_map=<span class="string">"auto"</span>
+        )
+
+    <span class="keyword">def</span> <span class="method">generate</span>(self, prompt: <span class="classname">str</span>) -> <span class="classname">str</span>:
+        inputs = self.tokenizer(prompt, return_tensors=<span class="string">"pt"</span>).to(<span class="string">"cuda"</span>)
+        outputs = self.model.generate(**inputs, max_new_tokens=<span class="string">100</span>)
+        <span class="keyword">return</span> self.tokenizer.decode(outputs[<span class="string">0</span>])</code></pre>
                         </div>
                     </div>
                     <!-- Orbiting badges -->
-                    <div class="orbit-badge badge-1">@SpringBootApplication</div>
-                    <div class="orbit-badge badge-2">@RestController</div>
-                    <div class="orbit-badge badge-3">BCrypt</div>
-                    <div class="orbit-badge badge-4">HS256</div>
+                    <div class="orbit-badge badge-1">PyTorch</div>
+                    <div class="orbit-badge badge-2">TensorFlow</div>
+                    <div class="orbit-badge badge-3">Transformers</div>
+                    <div class="orbit-badge badge-4">CUDA</div>
                 </div>
             </div>
         </div>
@@ -118,25 +116,25 @@
                 
                 <div class="about-right anim-fade-left anim-delay-1">
                     <div class="section-label"><span class="label-slash">//</span> about_me</div>
-                    <h2 class="section-heading">Turning Complex Problems Into Elegant Backend Solutions</h2>
+                    <h2 class="section-heading">Turning Complex Problems Into Intelligent Solutions</h2>
                     <div class="bio-text">
-                        <p>I am a backend engineer with a strong foundation in enterprise Java. My work revolves around designing resilient architectures, from monolithic migrations to distributed microservices. I have a deep passion for security architecture and safeguarding data through <strong>Zero Trust</strong> patterns.</p>
-                        <p>Having navigated the complexities of high-scale systems in FinTech, E-Commerce, and SaaS domains, I understand that clean code isn't just an aesthetic choice—it's a critical component of maintainability and performance.</p>
+                        <p>I am an AI/ML engineer with a strong foundation in deep learning and scalable model deployment. My work revolves around designing intelligent architectures, from deploying state-of-the-art LLMs to building robust data pipelines. I have a deep passion for natural language processing and <strong>Computer Vision</strong>.</p>
+                        <p>Having navigated the complexities of high-scale systems in predictive analytics, Generative AI, and MLOps domains, I understand that clean engineering isn't just an aesthetic choice—it's a critical component of model performance and reliability.</p>
                     </div>
                     <div class="info-grid mt-8">
                         <div class="info-item"><span class="info-label">Location</span><span class="info-value">San Francisco, CA</span></div>
                         <div class="info-item"><span class="info-label">Availability</span><span class="info-value status-open">Open to Offers</span></div>
-                        <div class="info-item"><span class="info-label">Languages</span><span class="info-value">Java, SQL, TypeScript</span></div>
-                        <div class="info-item"><span class="info-label">Education</span><span class="info-value">BS Computer Science</span></div>
+                        <div class="info-item"><span class="info-label">Languages</span><span class="info-value">Python, C++, SQL</span></div>
+                        <div class="info-item"><span class="info-label">Education</span><span class="info-value">MS Computer Science</span></div>
                     </div>
                     <div class="tech-stack-icons mt-8">
-                        <div class="ts-icon tooltip-wrap" data-tooltip="Spring Boot"><i class="devicon-spring-original"></i></div>
-                        <div class="ts-icon tooltip-wrap" data-tooltip="Java"><i class="devicon-java-plain"></i></div>
+                        <div class="ts-icon tooltip-wrap" data-tooltip="Python"><i class="devicon-python-plain"></i></div>
+                        <div class="ts-icon tooltip-wrap" data-tooltip="PyTorch"><i class="devicon-pytorch-original"></i></div>
+                        <div class="ts-icon tooltip-wrap" data-tooltip="TensorFlow"><i class="devicon-tensorflow-original"></i></div>
+                        <div class="ts-icon tooltip-wrap" data-tooltip="Pandas"><i class="devicon-pandas-plain"></i></div>
                         <div class="ts-icon tooltip-wrap" data-tooltip="Docker"><i class="devicon-docker-plain"></i></div>
-                        <div class="ts-icon tooltip-wrap" data-tooltip="Kubernetes"><i class="devicon-kubernetes-plain"></i></div>
-                        <div class="ts-icon tooltip-wrap" data-tooltip="PostgreSQL"><i class="devicon-postgresql-plain"></i></div>
-                        <div class="ts-icon tooltip-wrap" data-tooltip="Redis"><i class="devicon-redis-plain"></i></div>
                         <div class="ts-icon tooltip-wrap" data-tooltip="AWS"><i class="devicon-amazonwebservices-plain-wordmark"></i></div>
+                        <div class="ts-icon tooltip-wrap" data-tooltip="Jupyter"><i class="devicon-jupyter-plain"></i></div>
                     </div>
                 </div>
             </div>
@@ -150,56 +148,56 @@
             <br>
             <h2 class="section-heading anim-fade-up">Mastery Across the Stack</h2>
             <div class="category-cards anim-fade-up anim-delay-1 mt-8">
-                <div class="cat-card"><div class="cat-icon">⚙️</div><h3>Backend Engineering</h3><p>Spring Boot, Java, REST APIs, Microservices.</p></div>
-                <div class="cat-card"><div class="cat-icon">🔐</div><h3>Security & Auth</h3><p>Spring Security, JWT, OAuth2, RBAC.</p></div>
-                <div class="cat-card"><div class="cat-icon">☁️</div><h3>DevOps & Cloud</h3><p>AWS, Docker, Kubernetes, CI/CD.</p></div>
-                <div class="cat-card"><div class="cat-icon">🗄️</div><h3>Databases & Messaging</h3><p>PostgreSQL, Redis, RabbitMQ, Kafka.</p></div>
+                <div class="cat-card"><div class="cat-icon">🧠</div><h3>Machine Learning</h3><p>PyTorch, TensorFlow, Scikit-Learn, Deep Learning.</p></div>
+                <div class="cat-card"><div class="cat-icon">🤖</div><h3>Generative AI & LLMs</h3><p>Transformers, LangChain, RAG, Prompt Engineering.</p></div>
+                <div class="cat-card"><div class="cat-icon">☁️</div><h3>MLOps & Cloud</h3><p>AWS SageMaker, MLflow, Docker, Kubernetes.</p></div>
+                <div class="cat-card"><div class="cat-icon">🗄️</div><h3>Data Engineering</h3><p>Pandas, Spark, SQL, Vector Databases.</p></div>
             </div>
             <div class="skills-grid mt-12">
                 <div class="skills-left relative anim-fade-right anim-delay-2">
                     <div class="skill-bar-item">
-                        <div class="skill-info"><span class="skill-name">Spring Boot & Spring Cloud</span><span class="skill-pct">98%</span></div>
+                        <div class="skill-info"><span class="skill-name">Deep Learning & Neural Networks</span><span class="skill-pct">98%</span></div>
                         <div class="skill-track"><div class="skill-fill" data-width="98%"></div></div>
                     </div>
                     <div class="skill-bar-item">
-                        <div class="skill-info"><span class="skill-name">Java (8–21)</span><span class="skill-pct">97%</span></div>
+                        <div class="skill-info"><span class="skill-name">Python & Scientific Computing</span><span class="skill-pct">97%</span></div>
                         <div class="skill-track"><div class="skill-fill" data-width="97%"></div></div>
                     </div>
                     <div class="skill-bar-item">
-                        <div class="skill-info"><span class="skill-name">Spring Security & JWT / OAuth2</span><span class="skill-pct">96%</span></div>
-                        <div class="skill-track"><div class="skill-fill" data-width="96%"></div></div>
+                        <div class="skill-info"><span class="skill-name">Generative AI & LLMs</span><span class="skill-pct">95%</span></div>
+                        <div class="skill-track"><div class="skill-fill" data-width="95%"></div></div>
                     </div>
                     <div class="skill-bar-item">
-                        <div class="skill-info"><span class="skill-name">REST API & Microservices</span><span class="skill-pct">94%</span></div>
+                        <div class="skill-info"><span class="skill-name">MLOps & Model Deployment</span><span class="skill-pct">94%</span></div>
                         <div class="skill-track"><div class="skill-fill" data-width="94%"></div></div>
                     </div>
                     <div class="skill-bar-item">
-                        <div class="skill-info"><span class="skill-name">PostgreSQL / Hibernate</span><span class="skill-pct">92%</span></div>
+                        <div class="skill-info"><span class="skill-name">Computer Vision & NLP</span><span class="skill-pct">92%</span></div>
                         <div class="skill-track"><div class="skill-fill" data-width="92%"></div></div>
                     </div>
                     <div class="skill-bar-item">
-                        <div class="skill-info"><span class="skill-name">Docker / Kubernetes</span><span class="skill-pct">88%</span></div>
+                        <div class="skill-info"><span class="skill-name">Data Engineering & Pipelines</span><span class="skill-pct">88%</span></div>
                         <div class="skill-track"><div class="skill-fill" data-width="88%"></div></div>
                     </div>
                 </div>
                 <div class="skills-right anim-fade-left anim-delay-2">
                     <div class="hex-cloud mt-8">
-                        <div class="hex-badge color-primary">Spring MVC</div>
-                        <div class="hex-badge color-secondary">Redis</div>
-                        <div class="hex-badge color-muted">AWS EC2</div>
-                        <div class="hex-badge color-primary">JUnit 5</div>
-                        <div class="hex-badge color-secondary">RabbitMQ</div>
-                        <div class="hex-badge color-primary">Maven / Gradle</div>
-                        <div class="hex-badge color-muted">CI/CD Pipeline</div>
-                        <div class="hex-badge color-secondary">Kafka</div>
+                        <div class="hex-badge color-primary">PyTorch</div>
+                        <div class="hex-badge color-secondary">TensorFlow</div>
+                        <div class="hex-badge color-muted">CUDA</div>
+                        <div class="hex-badge color-primary">HuggingFace</div>
+                        <div class="hex-badge color-secondary">MLflow</div>
+                        <div class="hex-badge color-primary">FastAPI</div>
+                        <div class="hex-badge color-muted">AWS SageMaker</div>
+                        <div class="hex-badge color-secondary">Pinecone</div>
                         <div class="hex-badge color-muted">Git</div>
                     </div>
                 </div>
             </div>
             <div class="highlight-cards mt-12 anim-fade-up anim-delay-3">
-                <div class="hl-card"><div class="hl-icon glow-text">🛡️</div><h4 class="hl-title">Security-First Mindset</h4><p class="hl-desc">Defending against OWASP Top 10 vulnerabilities.</p></div>
-                <div class="hl-card"><div class="hl-icon glow-text">⚡</div><h4 class="hl-title">API Performance Obsessed</h4><p class="hl-desc">Optimizing queries, caching layers, and managing thread pools.</p></div>
-                <div class="hl-card"><div class="hl-icon glow-text">📈</div><h4 class="hl-title">Scalability by Design</h4><p class="hl-desc">From stateless workloads to event-driven architectures.</p></div>
+                <div class="hl-card"><div class="hl-icon glow-text">🧠</div><h4 class="hl-title">AI-First Mindset</h4><p class="hl-desc">Solving complex business problems with cutting-edge ML models.</p></div>
+                <div class="hl-card"><div class="hl-icon glow-text">⚡</div><h4 class="hl-title">Inference Performance</h4><p class="hl-desc">Optimizing weights, quantization, and accelerating serving with GPUs.</p></div>
+                <div class="hl-card"><div class="hl-icon glow-text">📈</div><h4 class="hl-title">Scalability by Design</h4><p class="hl-desc">From distributed training clusters to seamless model serving architectures.</p></div>
             </div>
         </div>
     </section>
@@ -212,15 +210,15 @@
             <div class="featured-project anim-fade-up anim-delay-1 mt-8">
                 <div class="fp-content">
                     <div class="fp-eyebrow">Featured Work</div>
-                    <h3 class="fp-title">SecureVault API</h3>
+                    <h3 class="fp-title">Enterprise RAG Platform</h3>
                     <div class="fp-desc-card">
-                        <p>Enterprise JWT authentication platform with refresh token rotation, role-based access control, and rate limiting. Built for a fintech client handling millions of reliable daily requests with zero trust principles.</p>
+                        <p>A highly scalable Retrieval-Augmented Generation (RAG) platform delivering precise answers from millions of internal documents. Employs advanced semantic search and integrates with state-of-the-art open-source LLMs.</p>
                     </div>
                     <div class="fp-metrics">
-                        <span class="metric-badge">2M+ req/day</span><span class="metric-badge">&lt;50ms latency</span><span class="metric-badge">Zero breaches</span>
+                        <span class="metric-badge">2M+ queries/day</span><span class="metric-badge">&lt;200ms TTFT</span><span class="metric-badge">95% Accuracy</span>
                     </div>
                     <div class="fp-tags">
-                        <span>Spring Boot 3</span><span>Spring Security</span><span>JWT</span><span>Redis</span><span>PostgreSQL</span>
+                        <span>Python</span><span>LangChain</span><span>Pinecone</span><span>Weaviate</span><span>FastAPI</span>
                     </div>
                     <div class="fp-links mt-4">
                         <a href="#" class="btn btn-primary glow-btn">Live Demo</a>
@@ -232,23 +230,23 @@
             <div class="projects-grid mt-12">
                 <div class="project-card anim-fade-up anim-delay-2">
                     <div class="card-inner">
-                        <h3 class="card-title">CloudMesh Gateway</h3>
-                        <p class="card-desc">API gateway and service mesh router with dynamic routing, circuit breaking, and load balancing for a 12-service microservice ecosystem.</p>
-                        <div class="card-stack mt-4"><span>Spring Cloud Gateway</span><span>Eureka</span><span>Resilience4j</span></div>
+                        <h3 class="card-title">Vision API Gateway</h3>
+                        <p class="card-desc">Real-time object detection and semantic segmentation gateway for autonomous systems. Processes high-definition video streams with sub-millisecond overhead per frame.</p>
+                        <div class="card-stack mt-4"><span>PyTorch</span><span>YOLOv8</span><span>OpenCV</span><span>TensorRT</span></div>
                     </div>
                 </div>
                 <div class="project-card anim-fade-up anim-delay-3">
                     <div class="card-inner">
-                        <h3 class="card-title">OrderFlow Engine</h3>
-                        <p class="card-desc">Event-driven order processing system utilizing asynchronous workers for eventual consistency. Achieves 99.99% reliability under heavy load.</p>
-                        <div class="card-stack mt-4"><span>RabbitMQ</span><span>Spring Boot</span><span>WebSocket</span></div>
+                        <h3 class="card-title">Predictive Analytics Engine</h3>
+                        <p class="card-desc">Advanced time-series forecasting system to predict logistics supply chain bottlenecks up to two weeks in advance. Built using gradient-boosted trees and deep learning models.</p>
+                        <div class="card-stack mt-4"><span>XGBoost</span><span>Pandas</span><span>AWS SageMaker</span></div>
                     </div>
                 </div>
                 <div class="project-card anim-fade-up anim-delay-4">
                     <div class="card-inner">
-                        <h3 class="card-title">IdentityForge</h3>
-                        <p class="card-desc">Custom OAuth2 authorization server supporting social logins (Google, GitHub), multi-factor authentication, and deep audit logging.</p>
-                        <div class="card-stack mt-4"><span>Spring Authorization Server</span><span>OAuth2</span></div>
+                        <h3 class="card-title">DeepForge Diffusion</h3>
+                        <p class="card-desc">Custom fine-tuned stable diffusion model that generates brand-compliant marketing assets efficiently and safely, leveraging custom LoRA weights.</p>
+                        <div class="card-stack mt-4"><span>Stable Diffusion</span><span>Diffusers</span><span>LoRA</span></div>
                     </div>
                 </div>
             </div>
@@ -266,13 +264,13 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <span class="timeline-date">2022 – Present</span>
-                        <h3 class="timeline-role">Senior Backend Engineer</h3>
-                        <h4 class="timeline-company">FinTech Solutions Inc.</h4>
+                        <h3 class="timeline-role">Senior AI Engineer</h3>
+                        <h4 class="timeline-company">Tech Innovations Inc.</h4>
                         <ul class="timeline-tasks">
-                            <li>Led the migration from a monolithic legacy system to a 15+ service microservices architecture.</li>
-                            <li>Reduced API endpoint latency by 60% through aggressive query optimization and Redis caching layers.</li>
+                            <li>Led the migration from legacy ML infrastructure to a modern, scalable MLOps platform on AWS.</li>
+                            <li>Reduced model inference latency by 60% through aggressive quantization and TensorRT optimization.</li>
                         </ul>
-                        <div class="timeline-tags"><span>Spring Boot</span><span>Microservices</span><span>OAuth2</span></div>
+                        <div class="timeline-tags"><span>PyTorch</span><span>AWS SageMaker</span><span>MLflow</span></div>
                     </div>
                 </div>
 
@@ -280,13 +278,13 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <span class="timeline-date">2020 – 2022</span>
-                        <h3 class="timeline-role">Backend Developer</h3>
-                        <h4 class="timeline-company">E-Commerce Platform Co.</h4>
+                        <h3 class="timeline-role">Machine Learning Developer</h3>
+                        <h4 class="timeline-company">Data Systems Co.</h4>
                         <ul class="timeline-tasks">
-                            <li>Built high-throughput order and inventory management APIs.</li>
-                            <li>Engineered systems that seamlessly handled Black Friday peaks of 100K+ concurrent users.</li>
+                            <li>Built high-throughput recommendation pipelines and deployed collaborative filtering models.</li>
+                            <li>Engineered features from datasets with over 100M+ rows efficiently using distributed Spark clusters.</li>
                         </ul>
-                        <div class="timeline-tags"><span>Java 11</span><span>Kafka</span><span>Docker</span></div>
+                        <div class="timeline-tags"><span>Python</span><span>Apache Spark</span><span>Docker</span></div>
                     </div>
                 </div>
             </div>
@@ -298,10 +296,10 @@
         <div class="container container-full">
             <h2 class="section-heading text-center anim-fade-up">Certifications & Milestones</h2>
             <div class="achievements-grid mt-12">
-                <div class="achieve-card anim-fade-up anim-delay-1"><div class="achieve-icon">☁️</div><h4>AWS Certified Developer</h4><span class="achieve-sub">Associate Level</span></div>
-                <div class="achieve-card anim-fade-up anim-delay-2"><div class="achieve-icon">🍃</div><h4>Spring Professional</h4><span class="achieve-sub">Certification</span></div>
-                <div class="achieve-card anim-fade-up anim-delay-3"><div class="achieve-icon">☕</div><h4>Oracle Certified Java SE 11</h4><span class="achieve-sub">Developer</span></div>
-                <div class="achieve-card anim-fade-up anim-delay-4"><div class="achieve-icon">⭐</div><h4>500+ GitHub Stars</h4><span class="achieve-sub">Open Source Libs</span></div>
+                <div class="achieve-card anim-fade-up anim-delay-1"><div class="achieve-icon">☁️</div><h4>AWS Certified Machine Learning</h4><span class="achieve-sub">Specialty Level</span></div>
+                <div class="achieve-card anim-fade-up anim-delay-2"><div class="achieve-icon">🏅</div><h4>Kaggle Master</h4><span class="achieve-sub">Top 1% Competitor</span></div>
+                <div class="achieve-card anim-fade-up anim-delay-3"><div class="achieve-icon">🎓</div><h4>DeepLearning.AI</h4><span class="achieve-sub">Specialization Certified</span></div>
+                <div class="achieve-card anim-fade-up anim-delay-4"><div class="achieve-icon">⭐</div><h4>500+ GitHub Stars</h4><span class="achieve-sub">Open Source AI Libs</span></div>
             </div>
         </div>
     </section>
@@ -315,16 +313,16 @@
                 <div class="carousel-track">
                     <div class="testimonial-card">
                         <div class="quote-mark">"</div>
-                        <p class="testim-text">"One of the strongest backend engineers I've worked with. Their ability to distill complex authentication flows into clean Spring Security configurations is unmatched."</p>
+                        <p class="testim-text">"One of the strongest AI engineers I've worked with. Their ability to distill complex research papers into production-ready PyTorch implementations is unmatched."</p>
                         <div class="testim-author">
-                            <div class="author-info"><span class="author-name">Jason Miller</span><span class="author-title">CTO @ FinTech</span></div>
+                            <div class="author-info"><span class="author-name">Jason Miller</span><span class="author-title">VP of Engineering @ Tech Innovations</span></div>
                         </div>
                     </div>
                     <div class="testimonial-card">
                         <div class="quote-mark">"</div>
-                        <p class="testim-text">"Pioneered our shift to microservices. They don't just write code; they architect systems that are performant, observable, and exceptionally secure."</p>
+                        <p class="testim-text">"Pioneered our shift to generative AI. They don't just train models; they architect AI systems that are scalable, reliable, and exceptionally accurate."</p>
                         <div class="testim-author">
-                            <div class="author-info"><span class="author-name">Sarah R.</span><span class="author-title">Tech Lead @ E-Commerce</span></div>
+                            <div class="author-info"><span class="author-name">Sarah R.</span><span class="author-title">Head of Data @ Data Systems</span></div>
                         </div>
                     </div>
                 </div>
@@ -359,7 +357,7 @@
     </section>
 
     <footer class="footer text-center mt-12">
-        <div class="container">&copy; 2026 Designed & Built with Java ☕ & Passion.</div>
+        <div class="container">&copy; 2026 Designed & Built with Python 🐍 & Passion.</div>
     </footer>
 
     <script src="script.js"></script>

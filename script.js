@@ -109,11 +109,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* ---------- 6. TYPEWRITER EFFECT ---------- */
     const phrases = [
-        "Spring Boot Architect",
-        "JWT & OAuth2 Expert",
-        "Microservices Engineer",
-        "Cloud-Native Developer",
-        "Enterprise Java Specialist"
+        "AI/ML Engineer",
+        "Deep Learning Specialist",
+        "LLM & NLP Expert",
+        "Computer Vision Researcher",
+        "MLOps Architect"
     ];
     const typeEl = document.getElementById('typewriter-text');
     let phraseIdx = 0;
